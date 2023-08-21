@@ -2,20 +2,20 @@ class Game {
   constructor() {}
 
   getState() {
-    var gamestateRef = database.ref("gamestate");
-    gamestateRef.on("value", function(data) {
-      gamestate = data.val();
+    var gameStateRef = database.ref("gameState");
+    gameStateRef.on("value", function(data) {
+      gameState = data.val();
     });
   }
   update(state) {
     database.ref("/").update({
-      gamestate: state
+      gameState: state
     });
   }
 
   start() {
     player = new Player();
-    playercount = player.getCount();
+    playerCount = player.getCount();
 
     form = new Form();
     form.display();
@@ -119,11 +119,11 @@ class Game {
 
   handleGrass(index){
 
-    //  animals[index - 1].overlap(grass, function(collector, collected) {
-    //   player.score += 21;
-    //   player.update();
-    //   collected.remove();
-    // });
+    animals[index - 1].overlap(grass, function(collector, collected) {
+      player.score += 21;
+      player.update();
+      collected.remove();
+    });
 
 
     // animals[index - 1].overlap(grass, function(collected, collector) {
@@ -133,11 +133,11 @@ class Game {
     // });
 
 
-    // animals[index].overlap(grass, function(collector, collected) {
-    //   player.score += 21;
-    //   player.update();
-    //   collected.update();
-    // });
+  //   animals[index].overlap(grass, function(collector, collected) {
+  //     player.score += 21;
+  //     player.update();
+  //     collected.update();
+  //   });
 
   }
 

@@ -28,11 +28,11 @@ function setup() {
 //BP
 function draw() {
   background(backgroundImage);
-  if (playercount === 2) {
+  if (playerCount === 2) {
     game.update(1);
   }
 
-  if (gamestate === 1) {
+  if (gameState === 1) {
     game.play();
   }
 }

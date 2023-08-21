@@ -39,11 +39,11 @@ class Form {
       Hola, ${this.input.value()}
       </br>Espera a que se una otro jugador...`;
       this.greeting.html(message);
-      playercount += 1;
+      playerCount += 1;
       player.name = this.input.value();
-      player.index = playercount;
+      player.index = playerCount;
     player.addPlayer();//aaa
-      player.updateCount(playercount); // BP
+      player.updateCount(playerCount); // BP
      player.getDistance(); //aaa
     });
 

@@ -33,16 +33,16 @@ class Player {
  
   //Bp
   getCount() {
-    var playercountRef = database.ref("playercount");
-    playercountRef.on("value", data => {
-      playercount = data.val();
+    var playerCountRef = database.ref("playerCount");
+    playerCountRef.on("value", data => {
+      playerCount = data.val();
     });
   }
 
   //Bp
   updateCount(count) {
     database.ref("/").update({
-      playercount: count
+      playerCount: count
     });
   }
 
